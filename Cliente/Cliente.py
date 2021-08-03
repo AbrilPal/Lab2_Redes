@@ -5,13 +5,11 @@
 #   - Cristina Bautista, 161260
 
 from encode import Encode_bit 
+from enviar import Enviar
 
 encode_bit = Encode_bit()
-
-
+enviar = Enviar()
 
 mensaje = input("Escriba el mensaje: ")
 mensaje_codificado = encode_bit.encode_cadena(mensaje)
-
-print(mensajeCodificado.decode())
-
+enviar.enviar_menaje(mensaje_codificado)

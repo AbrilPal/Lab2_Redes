@@ -15,4 +15,5 @@ class Enviar():
     def enviar_menaje(self, mensaje):
         clienteSocket = socket(AF_INET, SOCK_DGRAM)
         clienteSocket.sendto(mensaje.encode(), (self.serverIP, self.serverPort))
+        print("enviado exitosamente")
         clienteSocket.close()
