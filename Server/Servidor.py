@@ -18,5 +18,6 @@ print("el server ya esta escuchando en el puerto: " , serverPort)
 
 while True:
     mensaje, clientAddress = serverSocket.recvfrom(2048)
-    mensajeCodificado = mensaje.decode().upper()
+    mensajeCodificado = mensaje.decode()
+    print(mensajeCodificado)
     serverSocket.sendto(mensajeCodificado.encode(), clientAddress)
