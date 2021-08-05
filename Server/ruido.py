@@ -1,3 +1,4 @@
+# AJPoulter-Soton. (2019). Obtenido de: https://gist.github.com/AJPoulter-Soton/9d0d2505af64f0719bdee59b9a4533ba
 class Deteccion():
     def fletcher32(self, data, length):
         w_len = length
