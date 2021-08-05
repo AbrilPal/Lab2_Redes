@@ -6,10 +6,14 @@
 
 from encode import Encode_bit 
 from enviar import Enviar
+from ruido import Ruido
 
 encode_bit = Encode_bit()
 enviar = Enviar()
+r = Ruido()
 
 mensaje = input("Escriba el mensaje: ")
 mensaje_codificado = encode_bit.encode_cadena(mensaje)
-enviar.enviar_menaje(mensaje_codificado)
+mensaje_ruido = r.meter_ruido(mensaje_codificado)
+
+enviar.enviar_menaje(mensaje_ruido)

@@ -1,6 +1,6 @@
 
 class Deteccion():
-    def fletcher32(data, length):
+    def fletcher32(self, data, length):
         w_len = length
         c0 = 0
         c1 = 0

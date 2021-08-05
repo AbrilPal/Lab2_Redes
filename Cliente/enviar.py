@@ -13,7 +13,8 @@ class Enviar():
         self.serverPort =  12000
 
     def enviar_menaje(self, mensaje):
+        print(mensaje, "nono")
         clienteSocket = socket(AF_INET, SOCK_DGRAM)
-        clienteSocket.sendto(mensaje.encode(), (self.serverIP, self.serverPort))
+        clienteSocket.sendto(str(mensaje).encode(), (self.serverIP, self.serverPort))
         print("enviado exitosamente")
         clienteSocket.close()

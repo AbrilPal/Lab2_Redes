@@ -11,18 +11,20 @@ ft = Deteccion()
 
 class Ruido():
     def __init__(self) -> None:
-        self.probabilidad = 0.2
+        self.probabilidad = 0.365
         self.mensaje = ""
 
     def meter_ruido(self, cadena):
+        print(cadena)
         self.probabilidad = int(len(cadena) * self.probabilidad)
-        dec = ft.fletcher32(cadena, len(cadena))
+        largo = len(cadena)
+        print(largo)
+        dec = ft.fletcher32(cadena, largo)
         print(dec)
         for x in range(self.probabilidad):
-            pos = random.randint(0,99)
+            pos = random.randint(0,(len(cadena)-1))
             value = str(random.randint(0,1))
-            cadena = cadena[:pos] + str(value) + cadena[pos + 1:]
-
-            print('Ruido en:','pos', pos,'value', value)    
-
-        self.mensaje = cadena + dec
+            cadena = cadena[:pos] + str(value) + cadena[pos + 1:]  
+        print(len(cadena))
+        self.mensaje = cadena
+        return self.mensaje
