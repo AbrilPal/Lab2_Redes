@@ -25,10 +25,11 @@ while True:
 
     m = len(mensajeCodificado)
     rHamming = CorreccionHammingServer.calcRedundantBits(m)
-    arr = CorreccionHammingServer.posRedundantBits(mensajeCodificado)
+    arr = CorreccionHammingServer.posRedundantBits(mensajeCodificado, rHamming)
     arr = CorreccionHammingServer.calcParityBits(arr, rHamming)
 
     print("Mensaje recibido: ", mensajeCodificado)
-    numero_f = str(CorreccionHammingServer.detectError(arr, len(r)))
+    numero_f = str(CorreccionHammingServer.detectError(arr, rHamming))
+    # numero_f = '1'
     print("Mensaje enviado:",numero_f)
     serverSocket.sendto(numero_f.encode(), clientAddress)

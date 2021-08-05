@@ -9,8 +9,9 @@ from socket import *
 
 class Enviar():
     def __init__(self):
-        self.serverIP = "192.168.1.54"
-        self.serverPort =  12000
+        # self.serverIP = "192.168.1.54"
+        self.serverIP = "192.168.1.22"
+        self.serverPort =  4308
 
     def enviar_menaje(self, mensaje, numero):
         clienteSocket = socket(AF_INET, SOCK_DGRAM)
