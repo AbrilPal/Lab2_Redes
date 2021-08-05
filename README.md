@@ -5,7 +5,9 @@
 
 Para poder correr el algoritmo de detección tienes que seguir los siguientes pasos:
   1. Levantar el servidor:
+
     - cd .\Server\
+
     - python .\Servidor.py
   2. Ejecutar el cliente:
     - cd .\Cliente\ 
