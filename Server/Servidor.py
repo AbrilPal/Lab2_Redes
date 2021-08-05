@@ -6,6 +6,9 @@
 
 # Libreria socket
 from socket import *
+from ruido import Deteccion
+
+r = Deteccion()
 
 # Puerto del servidor
 serverPort = 12000
@@ -19,5 +22,7 @@ print("el server ya esta escuchando en el puerto: " , serverPort)
 while True:
     mensaje, clientAddress = serverSocket.recvfrom(2048)
     mensajeCodificado = mensaje.decode()
-    print(mensajeCodificado)
-    serverSocket.sendto(mensajeCodificado.encode(), clientAddress)
+    print("Mensaje recibido: ", mensajeCodificado)
+    numero_f = str(r.fletcher32(mensajeCodificado, len(mensajeCodificado)))
+    print("Mensaje enviado:",numero_f)
+    serverSocket.sendto(numero_f.encode(), clientAddress)

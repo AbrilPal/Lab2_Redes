@@ -15,5 +15,5 @@ class Encode_bit():
         bit = bitarray()
         bit.frombytes(mensaje.encode())
         self.mensaje_codificado = str(bit.to01())
-        # print(self.mensaje_codificado)
+        print("Mensaje enviado: ", self.mensaje_codificado)
         return self.mensaje_codificado
